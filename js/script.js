@@ -45,35 +45,36 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 // tawk.to toggle with connection check and fallback
 const supportBtn = document.getElementById('supportBtn');
 if (supportBtn) {
+    let tawkReady = false;
+
+    // Listen for tawk.to load event
+    if (typeof Tawk_API !== 'undefined') {
+        Tawk_API.onLoad = function() {
+            tawkReady = true;
+            console.log('tawk.to loaded');
+        };
+    }
+
     supportBtn.addEventListener('click', function() {
-        // If tawk.to API is ready, toggle the widget
         if (typeof Tawk_API !== 'undefined' && Tawk_API.toggle) {
+            // Try to toggle the widget
             Tawk_API.toggle();
-            
-            // Optional: monitor if the widget actually opens
-            // We'll set a timeout to detect if it's still "Reconnecting"
+
+            // If after 5 seconds the widget still isn't ready, offer a fallback
             setTimeout(function() {
-                // You can't directly check the widget's connection state,
-                // but we can show a non‑intrusive message after a few seconds.
-                // This is a UX improvement, not a fix.
-                console.log('If you see "Reconnecting", please check your network or try again later.');
+                if (!tawkReady) {
+                    const useFallback = confirm('Chat is taking a while to connect. Would you like to open it in a new tab instead?');
+                    if (useFallback) {
+                        window.open('https://tawk.to/chat/6996a5bac324771c3f1656b7/1jhq7eovi', '_blank');
+                    }
+                }
             }, 5000);
         } else {
-            // Widget not loaded at all – show a message with alternative contacts
-            alert('Chat is temporarily unavailable. Please reach out via WhatsApp or Telegram, or use the contact form.');
+            // Widget not loaded at all – offer fallback immediately
+            const useFallback = confirm('Chat is currently unavailable. Would you like to open it in a new tab?');
+            if (useFallback) {
+                window.open('https://tawk.to/chat/6996a5bac324771c3f1656b7/1jhq7eovi', '_blank');
+            }
         }
     });
-}
-
-// Optional: listen for tawk.to events (advanced)
-if (typeof Tawk_API !== 'undefined') {
-    Tawk_API.onLoad = function() {
-        console.log('tawk.to widget loaded successfully.');
-    };
-    Tawk_API.onOffline = function() {
-        console.log('tawk.to is offline.');
-    };
-    Tawk_API.onError = function(reason) {
-        console.log('tawk.to error:', reason);
-    };
 }

@@ -1,4 +1,4 @@
-/* Global Styles */
+/* Global Styles – Blue & White Theme with Official Brand Colors */
 * {
     margin: 0;
     padding: 0;
@@ -190,7 +190,7 @@ body {
     color: #555;
 }
 
-/* About Section */
+/* About Section – refined layout */
 .about {
     padding: 4rem 0;
     background: white;
@@ -413,7 +413,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Floating Icons (bottom right) */
+/* Floating Icons (bottom right) - Official Brand Colors, No Backgrounds */
 .floating-icons {
     position: fixed;
     bottom: 30px;
