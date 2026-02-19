@@ -1,0 +1,412 @@
+/* Global Styles – Blue & White Theme with Official Brand Colors for Icons */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 0;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 100;
+    border-bottom: 2px solid #0066cc;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #003366;
+}
+
+.logo span {
+    font-weight: 300;
+    color: #0066cc;
+    margin-left: 5px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: #003366;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #0066cc;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 51, 102, 0.7);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    color: #f0f0f0;
+}
+
+/* Buttons */
+.btn-blue {
+    display: inline-block;
+    padding: 0.8rem 2.5rem;
+    background-color: #0066cc;
+    border: 2px solid #0066cc;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 40px;
+    transition: 0.3s;
+}
+
+.btn-blue:hover {
+    background-color: #003366;
+    border-color: #003366;
+}
+
+/* Services Section */
+.services {
+    background-color: #f9f9f9;
+    padding: 4rem 0;
+}
+
+.services h2, .contact h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #003366;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,102,204,0.1);
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,102,204,0.2);
+}
+
+.service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.service-card h3 {
+    padding: 1.5rem 1rem 0.5rem;
+    color: #0066cc;
+    font-size: 1.3rem;
+}
+
+.service-card p {
+    padding: 0 1rem 1.5rem;
+    color: #555;
+}
+
+/* About Section – refined layout */
+.about {
+    padding: 4rem 0;
+    background: white;
+}
+
+.about .section-title {
+    text-align: left;              /* left aligned */
+    font-size: 2.5rem;
+    margin: 0 0 1rem 0;            /* reduced bottom margin */
+    color: #003366;
+    padding-top: 0;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;                      /* slightly reduced gap */
+    align-items: start;             /* align items at the top */
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.8;
+    margin-top: 0;                  /* no top margin – sits right under heading */
+    margin-bottom: 2rem;
+}
+
+.social-title {
+    font-size: 1.3rem;
+    color: #0066cc;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.about-image {
+    display: flex;
+    justify-content: center;        /* center image within its column */
+}
+
+.about-image img {
+    width: 90%;                     /* slightly smaller than full width */
+    max-width: 450px;               /* optional max size */
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* Social Icons – official brand colors, no hover */
+.social-icons {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: none;
+    width: 70px;
+}
+
+.social-icon i {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+.social-icon span {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Official Brand Colors */
+.social-icon.instagram i { color: #E4405F; }
+.social-icon.tiktok i { color: #000000; }
+.social-icon.facebook i { color: #1877F2; }
+.social-icon.youtube i { color: #FF0000; }
+
+/* No hover effects */
+.social-icon:hover i,
+.social-icon:hover span {
+    color: inherit;
+}
+
+/* Contact Section */
+.contact {
+    background-color: #f0f7ff;
+    padding: 4rem 0;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 2rem auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #0066cc;
+    box-shadow: 0 0 0 3px rgba(0,102,204,0.1);
+}
+
+.contact-form button {
+    align-self: center;
+    cursor: pointer;
+    background-color: #0066cc;
+    border: none;
+    color: white;
+}
+
+.contact-form button:hover {
+    background-color: #003366;
+}
+
+/* Footer */
+footer {
+    background: #003366;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+footer a {
+    color: #99ccff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Floating Icons (bottom right) - Official Brand Colors, No Backgrounds */
+.floating-icons {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.float-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: transparent;  /* No background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;       /* Larger icons */
+    text-decoration: none;
+    cursor: pointer;
+    transition: none;
+    border: none;
+    box-shadow: none;
+}
+
+/* Official brand colors for floating icons */
+.float-btn.whatsapp i {
+    color: #25D366;  /* WhatsApp official green */
+}
+
+.float-btn.telegram i {
+    color: #0088cc;  /* Telegram official blue */
+}
+
+.float-btn.support i {
+    color: #0066cc;  /* Keep support icon blue to match theme */
+}
+
+/* No hover effects */
+.float-btn:hover i {
+    color: inherit;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .about-image img {
+        width: 100%;
+        max-width: 100%;
+    }
+    .social-icons {
+        justify-content: center;
+        gap: 20px;
+    }
+    .floating-icons {
+        bottom: 20px;
+        right: 20px;
+    }
+    .float-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 2rem;
+    }
+}
