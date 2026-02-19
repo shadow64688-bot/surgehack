@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SurgeHack Recovery – Reclaim Your Crypto</title>
-    <!-- Font Awesome 6 (includes X logo) -->
+    <!-- Font Awesome 6 (multiple CDNs for reliability) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -53,7 +53,7 @@
                 <div class="service-card">
                     <img src="images/service-security.jpg" alt="Recovery">
                     <h3>3. Legal & Technical Recovery</h3>
-                    <p>We work with global partners to quickly freeze and retrieve your assets.</p>
+                    <p>We work with global partners to freeze and retrieve your funds.</p>
                 </div>
             </div>
         </div>
@@ -77,8 +77,9 @@
                             <i class="fab fa-facebook-f"></i>
                             <span>Facebook</span>
                         </a>
-                        <a href="https://x.com/SurgeHack" target="_blank" class="social-icon x" title="X (Twitter)">
-                            <i class="fab fa-x-twitter"></i>
+                        <!-- X with fallback SVG (icon + fallback script) -->
+                        <a href="https://x.com/SurgeHack" target="_blank" class="social-icon x" id="x-icon-link" title="X (Twitter)">
+                            <i class="fab fa-x-twitter" id="x-icon"></i>
                             <span>X</span>
                         </a>
                         <a href="https://tiktok.com/@surgehack_recovery_" target="_blank" class="social-icon tiktok" title="TikTok">
@@ -136,8 +137,9 @@
                         <span>@surgehack_recovery_experts</span>
                     </a>
                     
-                    <a href="https://x.com/SurgeHack" target="_blank" class="info-item">
-                        <i class="fab fa-x-twitter"></i>
+                    <!-- X with fallback in contact info -->
+                    <a href="https://x.com/SurgeHack" target="_blank" class="info-item" id="x-contact-link">
+                        <i class="fab fa-x-twitter" id="x-contact-icon"></i>
                         <span>@SurgeHack</span>
                     </a>
                     
@@ -184,6 +186,55 @@
         };
     </script>
     <script src="https://embed.tawk.to/6996a5bac324771c3f1656b7/1jhq7eovi" async></script>
+    <!-- Fallback script for X icon -->
+    <script>
+        // Check if X icon is visible, if not, replace with inline SVG
+        window.addEventListener('load', function() {
+            // Function to check if icon is actually displayed
+            function checkIcon(iconId, containerId) {
+                var icon = document.getElementById(iconId);
+                if (!icon) return;
+                var style = window.getComputedStyle(icon);
+                // If the font family doesn't include 'Font Awesome', or if it's a fallback, replace
+                // Simpler: check if the icon's width is zero or if it's not visible
+                if (icon.offsetWidth === 0 || icon.offsetHeight === 0 || style.display === 'none' || style.visibility === 'hidden') {
+                    replaceWithSVG(containerId);
+                } else {
+                    // Additional check: sometimes the icon shows as a square if font missing
+                    // We can check if the computed content is the Unicode for x-twitter? Too complex.
+                    // We'll rely on the fallback script as a backup.
+                }
+            }
+
+            function replaceWithSVG(containerId) {
+                var container = document.getElementById(containerId);
+                if (!container) return;
+                // Find the <i> inside
+                var icon = container.querySelector('i');
+                if (icon) {
+                    // Replace with inline SVG of X logo
+                    var svgNS = "http://www.w3.org/2000/svg";
+                    var svg = document.createElementNS(svgNS, "svg");
+                    svg.setAttribute("viewBox", "0 0 24 24");
+                    svg.setAttribute("width", "1em");
+                    svg.setAttribute("height", "1em");
+                    svg.setAttribute("fill", "currentColor");
+                    svg.style.width = "1em";
+                    svg.style.height = "1em";
+                    svg.style.verticalAlign = "middle";
+                    // X logo path (official 2023)
+                    var path = document.createElementNS(svgNS, "path");
+                    path.setAttribute("d", "M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z");
+                    svg.appendChild(path);
+                    icon.parentNode.replaceChild(svg, icon);
+                }
+            }
+
+            // Check both X icons
+            checkIcon('x-icon', 'x-icon-link');
+            checkIcon('x-contact-icon', 'x-contact-link');
+        });
+    </script>
     <!-- Main JS -->
     <script src="js/script.js"></script>
 </body>

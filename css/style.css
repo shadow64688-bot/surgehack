@@ -391,6 +391,20 @@ body {
 .contact-info .info-item .fa-x-twitter { color: #000000; }
 .contact-info .info-item .fa-tiktok { color: #000000; }
 
+/* For SVG fallback, we need to style the inline SVG */
+.contact-info .info-item svg,
+.social-icon.x svg {
+    width: 1.8rem;
+    height: 1.8rem;
+    fill: #000000;
+    vertical-align: middle;
+}
+.social-icon.x svg {
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-bottom: 8px;
+}
+
 .contact-info .info-item span {
     color: #333;
     word-break: break-word;
