@@ -1,4 +1,4 @@
-/* Global Styles – Blue & White Theme with Official Brand Colors for Icons */
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -190,16 +190,16 @@ body {
     color: #555;
 }
 
-/* About Section – refined layout */
+/* About Section */
 .about {
     padding: 4rem 0;
     background: white;
 }
 
 .about .section-title {
-    text-align: left;              /* left aligned */
+    text-align: left;
     font-size: 2.5rem;
-    margin: 0 0 1rem 0;            /* reduced bottom margin */
+    margin: 0 0 1rem 0;
     color: #003366;
     padding-top: 0;
 }
@@ -207,15 +207,15 @@ body {
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;                      /* slightly reduced gap */
-    align-items: start;             /* align items at the top */
+    gap: 2rem;
+    align-items: start;
 }
 
 .about-text p {
     font-size: 1.1rem;
     color: #444;
     line-height: 1.8;
-    margin-top: 0;                  /* no top margin – sits right under heading */
+    margin-top: 0;
     margin-bottom: 2rem;
 }
 
@@ -228,17 +228,17 @@ body {
 
 .about-image {
     display: flex;
-    justify-content: center;        /* center image within its column */
+    justify-content: center;
 }
 
 .about-image img {
-    width: 90%;                     /* slightly smaller than full width */
-    max-width: 450px;               /* optional max size */
+    width: 90%;
+    max-width: 450px;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
-/* Social Icons – official brand colors, no hover */
+/* Social Icons – official brand colors */
 .social-icons {
     display: flex;
     gap: 25px;
@@ -265,11 +265,11 @@ body {
     color: #333;
 }
 
-/* Official Brand Colors */
+/* Brand Colors */
 .social-icon.instagram i { color: #E4405F; }
-.social-icon.tiktok i { color: #000000; }
 .social-icon.facebook i { color: #1877F2; }
-.social-icon.youtube i { color: #FF0000; }
+.social-icon.x i { color: #000000; }
+.social-icon.tiktok i { color: #000000; }
 
 /* No hover effects */
 .social-icon:hover i,
@@ -277,15 +277,33 @@ body {
     color: inherit;
 }
 
-/* Contact Section */
+/* Contact Section – two-column layout */
 .contact {
     background-color: #f0f7ff;
     padding: 4rem 0;
 }
 
+.contact > .container > p {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #555;
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+/* Contact Form */
+.contact-form-container {
+    width: 100%;
+}
+
 .contact-form {
-    max-width: 600px;
-    margin: 2rem auto 0;
+    max-width: 100%;
+    margin: 0;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -310,15 +328,72 @@ body {
 }
 
 .contact-form button {
-    align-self: center;
+    align-self: flex-start;
     cursor: pointer;
     background-color: #0066cc;
     border: none;
     color: white;
+    padding: 0.8rem 2.5rem;
+    border-radius: 40px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: 0.3s;
 }
 
 .contact-form button:hover {
     background-color: #003366;
+}
+
+/* Contact Info (right column) */
+.contact-info {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,102,204,0.1);
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    color: #0066cc;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #0066cc;
+    padding-bottom: 0.5rem;
+}
+
+.contact-info .info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.contact-info .info-item:hover {
+    background-color: rgba(0,102,204,0.05);
+}
+
+.contact-info .info-item i {
+    font-size: 1.8rem;
+    width: 2rem;
+    text-align: center;
+}
+
+/* Brand colors for contact info icons */
+.contact-info .info-item .fa-whatsapp { color: #25D366; }
+.contact-info .info-item .fa-telegram-plane { color: #0088cc; }
+.contact-info .info-item .fa-facebook-f { color: #1877F2; }
+.contact-info .info-item .fa-instagram { color: #E4405F; }
+.contact-info .info-item .fa-x-twitter { color: #000000; }
+.contact-info .info-item .fa-tiktok { color: #000000; }
+
+.contact-info .info-item span {
+    color: #333;
+    word-break: break-word;
 }
 
 /* Footer */
@@ -338,7 +413,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Floating Icons (bottom right) - Official Brand Colors, No Backgrounds */
+/* Floating Icons (bottom right) */
 .floating-icons {
     position: fixed;
     bottom: 30px;
@@ -353,11 +428,11 @@ footer a:hover {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: transparent;  /* No background */
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.5rem;       /* Larger icons */
+    font-size: 2.5rem;
     text-decoration: none;
     cursor: pointer;
     transition: none;
@@ -365,20 +440,10 @@ footer a:hover {
     box-shadow: none;
 }
 
-/* Official brand colors for floating icons */
-.float-btn.whatsapp i {
-    color: #25D366;  /* WhatsApp official green */
-}
+.float-btn.whatsapp i { color: #25D366; }
+.float-btn.telegram i { color: #0088cc; }
+.float-btn.support i { color: #0066cc; }
 
-.float-btn.telegram i {
-    color: #0088cc;  /* Telegram official blue */
-}
-
-.float-btn.support i {
-    color: #0066cc;  /* Keep support icon blue to match theme */
-}
-
-/* No hover effects */
 .float-btn:hover i {
     color: inherit;
 }
@@ -399,6 +464,21 @@ footer a:hover {
     .social-icons {
         justify-content: center;
         gap: 20px;
+    }
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .contact-info {
+        padding: 1.5rem;
+    }
+    .contact-info .info-item {
+        font-size: 1rem;
+        padding: 0.3rem;
+    }
+    .contact-info .info-item i {
+        font-size: 1.5rem;
+        width: 1.8rem;
     }
     .floating-icons {
         bottom: 20px;
