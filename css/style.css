@@ -20,7 +20,7 @@ body {
     padding: 3rem 0;
 }
 
-/* Navigation */
+/* Navigation – Responsive */
 .navbar {
     position: fixed;
     top: 0;
@@ -36,12 +36,14 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
+    flex-wrap: wrap; /* Allows wrapping on mobile */
 }
 
 .logo {
     font-size: 1.8rem;
     font-weight: 700;
     color: #003366;
+    white-space: nowrap;
 }
 
 .logo span {
@@ -54,6 +56,8 @@ body {
     display: flex;
     list-style: none;
     gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .nav-menu a {
@@ -62,12 +66,13 @@ body {
     font-weight: 500;
     transition: 0.3s;
     position: relative;
+    padding: 0.5rem 0;
 }
 
 .nav-menu a::after {
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: 0;
     left: 0;
     width: 0%;
     height: 2px;
@@ -238,7 +243,7 @@ body {
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
-/* Social Icons – official brand colors */
+/* Social Icons – official brand colors, all same size */
 .social-icons {
     display: flex;
     gap: 25px;
@@ -271,10 +276,20 @@ body {
 .social-icon.x i { color: #000000; }
 .social-icon.tiktok i { color: #000000; }
 
+/* For SVG fallback (X logo) – match size */
+.social-icon.x svg {
+    width: 2.2rem;
+    height: 2.2rem;
+    fill: #000000;
+    margin-bottom: 8px;
+}
+
 /* No hover effects */
 .social-icon:hover i,
-.social-icon:hover span {
+.social-icon:hover span,
+.social-icon:hover svg {
     color: inherit;
+    fill: inherit;
 }
 
 /* Contact Section – two-column layout */
@@ -391,18 +406,12 @@ body {
 .contact-info .info-item .fa-x-twitter { color: #000000; }
 .contact-info .info-item .fa-tiktok { color: #000000; }
 
-/* For SVG fallback, we need to style the inline SVG */
-.contact-info .info-item svg,
-.social-icon.x svg {
+/* For SVG fallback in contact info */
+.contact-info .info-item svg {
     width: 1.8rem;
     height: 1.8rem;
     fill: #000000;
     vertical-align: middle;
-}
-.social-icon.x svg {
-    width: 2.2rem;
-    height: 2.2rem;
-    margin-bottom: 8px;
 }
 
 .contact-info .info-item span {
@@ -427,7 +436,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Floating Icons (bottom right) - Official Brand Colors, No Backgrounds */
+/* Floating Icons (bottom right) */
 .floating-icons {
     position: fixed;
     bottom: 30px;
@@ -462,11 +471,27 @@ footer a:hover {
     color: inherit;
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
+    /* Navigation stacks vertically */
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .nav-menu {
+        justify-content: center;
+        gap: 1rem;
+    }
+    .nav-menu a {
+        font-size: 1rem;
+    }
+
+    /* Hero heading smaller */
     .hero h1 {
         font-size: 2.2rem;
     }
+
+    /* About grid stacks */
     .about-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -479,6 +504,8 @@ footer a:hover {
         justify-content: center;
         gap: 20px;
     }
+
+    /* Contact grid stacks */
     .contact-wrapper {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -494,6 +521,8 @@ footer a:hover {
         font-size: 1.5rem;
         width: 1.8rem;
     }
+
+    /* Floating icons smaller */
     .floating-icons {
         bottom: 20px;
         right: 20px;
