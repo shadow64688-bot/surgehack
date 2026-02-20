@@ -26,6 +26,59 @@ body {
     padding: 3rem 0;
 }
 
+/* ─── Toast Notification ─────────────────────────────────────────────────── */
+.toast {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%) translateY(30px);
+    color: #ffffff;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    box-shadow: 0 8px 30px rgba(0, 51, 102, 0.35);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 9999;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.toast.toast-success {
+    background: #003366;
+    border-left: 4px solid #0066cc;
+}
+
+.toast.toast-error {
+    background: #5c0a0a;
+    border-left: 4px solid #cc0000;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.toast i {
+    font-size: 1.1rem;
+}
+
+@media (max-width: 600px) {
+    .toast {
+        width: 90%;
+        white-space: normal;
+        text-align: center;
+        justify-content: center;
+        bottom: 100px;
+        border-radius: 16px;
+    }
+}
+
 /* Navigation – Responsive */
 .navbar {
     position: fixed;
@@ -211,7 +264,7 @@ body {
     color: #555;
 }
 
-/* About Section – refined layout */
+/* About Section */
 .about {
     padding: 4rem 0;
     background: white;
@@ -259,7 +312,7 @@ body {
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
-/* Social Icons – official brand colors, all same size */
+/* Social Icons */
 .social-icons {
     display: flex;
     gap: 25px;
@@ -286,13 +339,11 @@ body {
     color: #333;
 }
 
-/* Brand Colors */
 .social-icon.instagram i { color: #E4405F; }
-.social-icon.facebook i { color: #1877F2; }
-.social-icon.x i { color: #000000; }
-.social-icon.tiktok i { color: #000000; }
+.social-icon.facebook i  { color: #1877F2; }
+.social-icon.x i         { color: #000000; }
+.social-icon.tiktok i    { color: #000000; }
 
-/* For SVG fallback (X logo) – match size */
 .social-icon.x svg {
     width: 2.2rem;
     height: 2.2rem;
@@ -300,7 +351,6 @@ body {
     margin-bottom: 8px;
 }
 
-/* No hover effects */
 .social-icon:hover i,
 .social-icon:hover span,
 .social-icon:hover svg {
@@ -308,7 +358,7 @@ body {
     fill: inherit;
 }
 
-/* Contact Section – two-column layout */
+/* Contact Section */
 .contact {
     background-color: #f0f7ff;
     padding: 4rem 0;
@@ -327,7 +377,6 @@ body {
     align-items: start;
 }
 
-/* Contact Form */
 .contact-form-container {
     width: 100%;
 }
@@ -375,7 +424,7 @@ body {
     background-color: #003366;
 }
 
-/* Contact Info (right column) */
+/* Contact Info */
 .contact-info {
     background: white;
     padding: 2rem;
@@ -414,15 +463,13 @@ body {
     text-align: center;
 }
 
-/* Brand colors for contact info icons */
-.contact-info .info-item .fa-whatsapp { color: #25D366; }
+.contact-info .info-item .fa-whatsapp    { color: #25D366; }
 .contact-info .info-item .fa-telegram-plane { color: #0088cc; }
-.contact-info .info-item .fa-facebook-f { color: #1877F2; }
-.contact-info .info-item .fa-instagram { color: #E4405F; }
-.contact-info .info-item .fa-x-twitter { color: #000000; }
-.contact-info .info-item .fa-tiktok { color: #000000; }
+.contact-info .info-item .fa-facebook-f  { color: #1877F2; }
+.contact-info .info-item .fa-instagram   { color: #E4405F; }
+.contact-info .info-item .fa-x-twitter  { color: #000000; }
+.contact-info .info-item .fa-tiktok     { color: #000000; }
 
-/* For SVG fallback in contact info */
 .contact-info .info-item svg {
     width: 1.8rem;
     height: 1.8rem;
@@ -453,7 +500,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Floating Icons (bottom right) */
+/* Floating Icons */
 .floating-icons {
     position: fixed;
     bottom: 30px;
@@ -482,13 +529,13 @@ footer a:hover {
 
 .float-btn.whatsapp i { color: #25D366; }
 .float-btn.telegram i { color: #0088cc; }
-.float-btn.support i { color: #0066cc; }
+.float-btn.support i  { color: #0066cc; }
 
 .float-btn:hover i {
     color: inherit;
 }
 
-/* ─── Mobile Navigation ─── */
+/* ─── Mobile Navigation ──────────────────────────────────────────────────── */
 @media (max-width: 768px) {
 
     .menu-toggle {
@@ -505,7 +552,6 @@ footer a:hover {
         align-items: center;
         gap: 0;
         padding: 0;
-        /* Smooth slide animation */
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
@@ -538,12 +584,10 @@ footer a:hover {
         margin-left: 0;
     }
 
-    /* Hero heading smaller */
     .hero h1 {
         font-size: 2.2rem;
     }
 
-    /* About grid stacks */
     .about-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -559,7 +603,6 @@ footer a:hover {
         gap: 20px;
     }
 
-    /* Contact grid stacks */
     .contact-wrapper {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -579,7 +622,6 @@ footer a:hover {
         width: 1.8rem;
     }
 
-    /* Floating icons smaller */
     .floating-icons {
         bottom: 20px;
         right: 20px;

@@ -1,3 +1,28 @@
+// ─── Toast Notification Helper ────────────────────────────────────────────────
+function showToast(message, type = 'success') {
+    // Remove any existing toast
+    const existing = document.querySelector('.toast');
+    if (existing) existing.remove();
+
+    const icon = type === 'success' ? 'fa-circle-check' : 'fa-circle-exclamation';
+
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    toast.innerHTML = `<i class="fas ${icon}"></i> ${message}`;
+    document.body.appendChild(toast);
+
+    // Trigger animation
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => toast.classList.add('show'));
+    });
+
+    // Auto-dismiss after 5 seconds
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 400);
+    }, 5000);
+}
+
 // ─── Mobile Menu Toggle ───────────────────────────────────────────────────────
 const menuToggle = document.getElementById("menu-toggle");
 const navMenu = document.getElementById("nav-menu");
@@ -27,6 +52,13 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
     const form = this;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+
+    // Loading state
+    submitBtn.textContent = 'Sending…';
+    submitBtn.disabled = true;
+
     const formData = new FormData(form);
 
     fetch(form.action, {
@@ -36,27 +68,27 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     })
     .then(response => {
         if (response.ok) {
-            alert('Thank you! A recovery specialist will contact you within 24 hours.');
+            showToast('Your request has been received. A specialist will contact you within 24 hours.', 'success');
             form.reset();
         } else {
-            response.json().then(data => {
-                if (data.errors) {
-                    alert(data.errors.map(e => e.message).join(', '));
-                } else {
-                    alert('Oops! There was a problem submitting your form.');
-                }
+            return response.json().then(data => {
+                const msg = data.errors
+                    ? data.errors.map(e => e.message).join(', ')
+                    : 'Something went wrong. Please try again.';
+                showToast(msg, 'error');
             });
         }
     })
     .catch(() => {
-        alert('Oops! There was a problem submitting your form.');
+        showToast('Unable to send your request. Please check your connection and try again.', 'error');
+    })
+    .finally(() => {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
     });
 });
 
 // ─── Tawk.to Support Button ───────────────────────────────────────────────────
-// Waits for Tawk_API to be ready, then wires the headset button to maximize the chat.
-// No reconnecting logic — Tawk.to handles its own connection internally.
-
 const supportBtn = document.getElementById('supportBtn');
 
 if (supportBtn) {
@@ -64,7 +96,6 @@ if (supportBtn) {
         if (typeof Tawk_API !== 'undefined' && typeof Tawk_API.maximize === 'function') {
             Tawk_API.maximize();
         } else {
-            // Tawk.to not loaded yet (e.g. slow connection) — open direct link
             window.open('https://tawk.to/chat/6996a5bac324771c3f1656b7/1jhq7eovi', '_blank');
         }
     });
