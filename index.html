@@ -1,197 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>SurgeHack Recovery Experts</title>
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SurgeHack Recovery Experts</title>
+
+<!-- Favicon (must exist in root folder) -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+<!-- PNG Icons -->
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
 
 <!-- Apple -->
-<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 
 <!-- Android -->
-<link rel="icon" type="image/png" sizes="192x192" href="images/android-chrome-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="images/android-chrome-512x512.png">
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/images/android-chrome-512x512.png">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-container">
-                <a class="logo" href="#">SURGEHACK<span>RECOVERY EXPERTS</span></a>
-                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
-                <ul class="nav-menu" id="nav-menu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">How It Works</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<!-- Navigation -->
+<nav class="navbar">
+<div class="container">
+<div class="nav-container">
 
-    <!-- Hero Section -->
-    <section class="hero" id="home" style="background-image: url('images/hero-bg.jpg');">
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1>Recover Lost &amp; Stolen Bitcoin</h1>
-                <p>We combine AI, blockchain forensics, and advanced tracking to trace and reclaim your digital assets.</p>
-                <a href="#contact" class="btn-blue">Start Your Recovery</a>
-            </div>
-        </div>
-    </section>
+<a class="logo" href="#">
+SURGEHACK<span>RECOVERY EXPERTS</span>
+</a>
 
-    <!-- Services / How It Works Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2>Our Proven Process</h2>
-            <div class="services-grid">
+<button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+&#9776;
+</button>
 
-                <div class="service-card">
-                    <img src="images/service-ai.jpg" alt="AI-Powered Forensic Analysis" />
-                    <h3>1. AI-Powered Forensic Analysis</h3>
-                    <p>Our proprietary algorithms conduct a deep-layer scan of the blockchain, identifying transaction patterns, wallet clusters, and behavioural signatures associated with fraudulent activity — delivering actionable intelligence from day one.</p>
-                </div>
+<ul class="nav-menu" id="nav-menu">
+<li><a href="#home">Home</a></li>
+<li><a href="#services">How It Works</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 
-                <div class="service-card">
-                    <img src="images/service-tracking.jpg" alt="Real-Time Asset Tracking" />
-                    <h3>2. Real-Time Asset Tracking</h3>
-                    <p>We deploy continuous surveillance across thousands of exchanges, mixer services, and on-chain addresses. The moment your assets move, our system flags it — giving our team the critical window needed to intervene before funds are further dispersed.</p>
-                </div>
+</div>
+</div>
+</nav>
 
-                <div class="service-card">
-                    <img src="images/service-security.jpg" alt="Legal and Technical Recovery" />
-                    <h3>3. Legal &amp; Technical Recovery</h3>
-                    <p>Leveraging a global network of cybercrime legal specialists, financial regulators, and exchange compliance teams, we coordinate the formal freezing and repatriation of your digital assets — keeping you informed and supported at every stage of the process.</p>
-                </div>
+<!-- Hero Section -->
+<section class="hero" id="home" style="background-image:url('images/hero-bg.jpg');">
 
-            </div>
-        </div>
-    </section>
+<div class="hero-overlay"></div>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-text">
-                    <h2 class="section-title">Who We Are</h2>
-                    <p>SurgeHack Recovery is a team of ex‑cybersecurity specialists, data scientists, and legal experts dedicated to fighting crypto fraud. With over $50M recovered for clients worldwide, we use proprietary AI tools to track illicit transactions across the blockchain. Your recovery is our mission.</p>
-                    <p class="social-title">Connect With Us</p>
-                    <div class="social-icons">
-                        <a href="https://www.instagram.com/surgehack_recovery_experts" target="_blank" class="social-icon instagram">
-                            <i class="fab fa-instagram"></i>
-                            <span>Instagram</span>
-                        </a>
-                        <a href="https://www.facebook.com/SurgeHack" target="_blank" class="social-icon facebook">
-                            <i class="fab fa-facebook-f"></i>
-                            <span>Facebook</span>
-                        </a>
-                        <a href="https://x.com/SurgeHack" target="_blank" class="social-icon x">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
-                            <span>X</span>
-                        </a>
-                        <a href="https://www.tiktok.com/@surgehack_recovery_" target="_blank" class="social-icon tiktok">
-                            <i class="fab fa-tiktok"></i>
-                            <span>TikTok</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <img src="images/about-team.jpg" alt="SurgeHack Recovery Team" />
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="container">
+<div class="hero-content">
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2>Get Your Free Consultation</h2>
-            <p>Tell us about your case – we'll respond within 24 hours.</p>
-            <div class="contact-wrapper">
-                <div class="contact-form-container">
-                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xbdakwej" method="POST">
-                        <input type="text" name="name" placeholder="Your Full Name" required />
-                        <input type="email" name="email" placeholder="Your Email Address" required />
-                        <input type="tel" name="phone" placeholder="Phone Number (optional)" />
-                        <textarea name="message" rows="5" placeholder="Describe your situation..." required></textarea>
-                        <button type="submit" class="btn-blue">Send Request</button>
-                    </form>
-                </div>
-                <div class="contact-info">
-                    <h3>Reach us directly</h3>
-                    <a href="https://wa.me/16727023377" class="info-item" target="_blank">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>+1 672 702 3377</span>
-                    </a>
-                    <a href="https://t.me/SurgeHack_Recovery_Experts" class="info-item" target="_blank">
-                        <i class="fab fa-telegram-plane"></i>
-                        <span>@SurgeHack_Recovery_Experts</span>
-                    </a>
-                    <a href="https://www.facebook.com/SurgeHack" class="info-item" target="_blank">
-                        <i class="fab fa-facebook-f"></i>
-                        <span>@SurgeHack</span>
-                    </a>
-                    <a href="https://www.instagram.com/surgehack_recovery_experts" class="info-item" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                        <span>@surgehack_recovery_experts</span>
-                    </a>
-                    <a href="https://x.com/SurgeHack" class="info-item" target="_blank">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
-                        <span>@SurgeHack</span>
-                    </a>
-                    <a href="https://www.tiktok.com/@surgehack_recovery_" class="info-item" target="_blank">
-                        <i class="fab fa-tiktok"></i>
-                        <span>@surgehack_recovery_</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+<h1>Recover Lost & Stolen Bitcoin</h1>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>© 2025 SurgeHack Recovery. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms</a></p>
-        </div>
-    </footer>
+<p>
+We combine AI, blockchain forensics, and advanced tracking
+to trace and reclaim your digital assets.
+</p>
 
-    <!-- Floating Icons -->
-    <div class="floating-icons">
-        <a href="https://wa.me/16727023377" target="_blank" class="float-btn whatsapp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="https://t.me/SurgeHack_Recovery_Experts" target="_blank" class="float-btn telegram">
-            <i class="fab fa-telegram-plane"></i>
-        </a>
-        <!-- Support button: opens Tawk.to chat directly -->
-        <button class="float-btn support" id="supportBtn" aria-label="Live Chat Support">
-            <i class="fas fa-headset"></i>
-        </button>
-    </div>
+<a href="#contact" class="btn-blue">
+Start Your Recovery
+</a>
 
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/6996a5bac324771c3f1656b7/1jhq7eovi';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
-    <!--End of Tawk.to Script-->
+</div>
+</div>
+</section>
 
-    <script src="js/script.js"></script>
+<!-- Services -->
+<section class="services" id="services">
+
+<div class="container">
+
+<h2>Our Proven Process</h2>
+
+<div class="services-grid">
+
+<div class="service-card">
+
+<img src="images/service-ai.jpg" alt="AI Analysis">
+
+<h3>1. AI-Powered Forensic Analysis</h3>
+
+<p>
+Our algorithms scan the blockchain identifying patterns,
+wallet clusters and suspicious behavior.
+</p>
+
+</div>
+
+<div class="service-card">
+
+<img src="images/service-tracking.jpg" alt="Tracking">
+
+<h3>2. Real-Time Asset Tracking</h3>
+
+<p>
+Continuous monitoring across exchanges and blockchain
+addresses allows us to follow stolen funds instantly.
+</p>
+
+</div>
+
+<div class="service-card">
+
+<img src="images/service-security.jpg" alt="Recovery">
+
+<h3>3. Legal & Technical Recovery</h3>
+
+<p>
+We coordinate with exchanges and cybercrime specialists
+to freeze and recover assets when possible.
+</p>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- About -->
+<section class="about" id="about">
+
+<div class="container">
+
+<div class="about-grid">
+
+<div class="about-text">
+
+<h2 class="section-title">Who We Are</h2>
+
+<p>
+SurgeHack Recovery is a team of cybersecurity specialists,
+data scientists and legal experts dedicated to fighting crypto fraud.
+</p>
+
+<p class="social-title">Connect With Us</p>
+
+<div class="social-icons">
+
+<a href="https://www.instagram.com/surgehack_recovery_experts" target="_blank" class="social-icon instagram">
+<i class="fab fa-instagram"></i>
+<span>Instagram</span>
+</a>
+
+<a href="https://www.facebook.com/SurgeHack" target="_blank" class="social-icon facebook">
+<i class="fab fa-facebook-f"></i>
+<span>Facebook</span>
+</a>
+
+<a href="https://x.com/SurgeHack" target="_blank" class="social-icon x">
+<i class="fab fa-x-twitter"></i>
+<span>X</span>
+</a>
+
+<a href="https://www.tiktok.com/@surgehack_recovery_" target="_blank" class="social-icon tiktok">
+<i class="fab fa-tiktok"></i>
+<span>TikTok</span>
+</a>
+
+</div>
+
+</div>
+
+<div class="about-image">
+<img src="images/about-team.jpg" alt="Team">
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+
+<div class="container">
+
+<h2>Get Your Free Consultation</h2>
+
+<p>Tell us about your case – we'll respond within 24 hours.</p>
+
+<div class="contact-wrapper">
+
+<div class="contact-form-container">
+
+<form class="contact-form" action="https://formspree.io/f/xbdakwej" method="POST">
+
+<input type="text" name="name" placeholder="Your Full Name" required>
+
+<input type="email" name="email" placeholder="Your Email Address" required>
+
+<input type="tel" name="phone" placeholder="Phone Number (optional)">
+
+<textarea name="message" rows="5" placeholder="Describe your situation..." required></textarea>
+
+<button type="submit" class="btn-blue">
+Send Request
+</button>
+
+</form>
+
+</div>
+
+<div class="contact-info">
+
+<h3>Reach us directly</h3>
+
+<a href="https://wa.me/16727023377" target="_blank" class="info-item">
+<i class="fab fa-whatsapp"></i>
+<span>+1 672 702 3377</span>
+</a>
+
+<a href="https://t.me/SurgeHack_Recovery_Experts" target="_blank" class="info-item">
+<i class="fab fa-telegram-plane"></i>
+<span>@SurgeHack_Recovery_Experts</span>
+</a>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+
+<div class="container">
+
+<p>
+© 2025 SurgeHack Recovery. All rights reserved.
+</p>
+
+</div>
+
+</footer>
+
+<!-- Floating Buttons -->
+<div class="floating-icons">
+
+<a href="https://wa.me/16727023377" target="_blank" class="float-btn whatsapp">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+<a href="https://t.me/SurgeHack_Recovery_Experts" target="_blank" class="float-btn telegram">
+<i class="fab fa-telegram-plane"></i>
+</a>
+
+<button class="float-btn support" id="supportBtn">
+<i class="fas fa-headset"></i>
+</button>
+
+</div>
+
+<!-- Tawk Chat -->
+<script>
+var Tawk_API=Tawk_API||{},Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),
+s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6996a5bac324771c3f1656b7/1jhq7eovi';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+
+<script src="js/script.js"></script>
+
 </body>
 </html>
